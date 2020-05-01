@@ -1,13 +1,14 @@
-package com.navkar.billGeneratorUI;
 
 import javax.swing.*;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.navkar.billGeneratorUI.Message;
+
 public class HelloWorld {
 		HelloWorld(){  
-		ApplicationContext context = new ClassPathXmlApplicationContext("/spring.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 		Message message= (Message) context.getBean("helloWorld");  
 	    message.getMessage();
 			JFrame f=new JFrame(message.getMessage()); 
@@ -21,9 +22,8 @@ public class HelloWorld {
 			f.setTitle(message.getMessage());
 			f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
     }  
-
-	public static void main(String[] args) {  
-	    new HelloWorld();  
-	}
+public static void main(String[] args) {  
+    new HelloWorld();  
+}
 	
 }

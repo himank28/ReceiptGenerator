@@ -1,0 +1,222 @@
+package com.navkar.billGeneratorUI;
+
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.EventQueue;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+
+import javax.swing.AbstractButton;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.border.EmptyBorder;
+import javax.swing.table.TableColumnModel;
+import javax.swing.table.TableModel;
+
+import com.navkar.faltu.AdministratorForm;
+
+import antlr.collections.List;
+
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout;
+import javax.swing.LayoutStyle.ComponentPlacement;
+
+public class ReceiptWindowUI extends JFrame {
+
+	
+
+	private JButton resetBtn;
+	private JTextField companyNameValue;
+	private JLabel companyName;
+	private JLabel date;
+	private JButton backBtn;
+	private JButton printBtn;
+	private JTable jtable;
+	private JPanel topPanel;
+	private JPanel bottomPanel;
+	private AbstractButton dateValue;
+	
+	public ReceiptWindowUI() {
+		
+		initComponents();
+		//Label Company Name
+		/*JLabel lblCompanyName = new JLabel("Company Name");
+		lblCompanyName.setBounds(20,90, 80, 30);
+		
+		
+		//Text field For Company Name 
+		JTextField companyNameValue = new JTextField("Enter Company name");
+		companyNameValue.setColumns(10);
+		companyNameValue.setBounds(100, 110, 80, 30);
+		
+		//Label date 
+		JLabel lblDate = new JLabel("Date");
+		lblDate.setBounds(20,110, 80, 30);
+		
+		//Text field For Company Name 
+		JTextField dateValue = new JTextField();
+		dateValue.setColumns(10);
+		dateValue.setBounds(100, 110, 80, 30);
+		
+		//frame setting 
+		JFrame frame = new JFrame();
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setTitle("Bill generator");
+		frame.setSize(1200, 800);
+		frame.add(companyNameValue);
+		frame.add(lblDate);
+		frame.add(lblCompanyName);
+		
+		frame.setVisible(true);*/
+		//this.setSize(1200, 800);
+		this.setVisible(true);
+	}
+	
+	private void initComponents(){
+		
+		resetBtn = new javax.swing.JButton();
+        companyNameValue = new javax.swing.JTextField(100);
+        companyName = new javax.swing.JLabel();
+        date = new javax.swing.JLabel();
+//        jLabel3 = new javax.swing.JLabel();
+//        jLabel4 = new javax.swing.JLabel();
+        printBtn = new javax.swing.JButton();
+        backBtn = new javax.swing.JButton();
+        topPanel = new JPanel();
+        
+        topPanel.setBounds(10, 10, 700, 500);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(topPanel);
+        layout.setHorizontalGroup(
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addContainerGap()
+        			.addGroup(layout.createParallelGroup(Alignment.TRAILING)
+        				.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        					.addComponent(companyName)
+        					.addComponent(date))
+        				.addGroup(layout.createSequentialGroup()
+        					.addComponent(backBtn)
+        					.addGap(26)))
+        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(layout.createSequentialGroup()
+        					.addComponent(resetBtn)
+        					.addGap(26)
+        					.addComponent(printBtn))
+        				.addGroup(layout.createSequentialGroup()
+        					.addPreferredGap(ComponentPlacement.UNRELATED)
+        					.addComponent(companyNameValue, GroupLayout.PREFERRED_SIZE, 184, GroupLayout.PREFERRED_SIZE)))
+        			.addContainerGap(366, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+        	layout.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addGap(26)
+        			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(companyName)
+        				.addComponent(companyNameValue, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE))
+        			.addGap(24)
+        			.addComponent(date)
+        			.addGap(47)
+        			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(resetBtn)
+        				.addComponent(backBtn)
+        				.addGap(25)
+        				.addComponent(printBtn))
+        			.addGap(470))
+        );
+//        topPanel.setLayout(layout);
+//        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+//        getContentPane().setLayout(layout);
+        
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(153, 153, 255));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        resetBtn.setText("RESET");
+        resetBtn.setActionCommand("RESET");
+        resetBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resetBtnActionPerformed(evt);
+            }
+        });
+
+        companyName.setText("COMPANY NAME :");
+        date.setText("DATE :");
+
+//        jLabel3.setBackground(new java.awt.Color(204, 204, 255));
+//        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+//        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+//        jLabel3.setText("RETAIL MINING ");
+//        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+//        jLabel3.setOpaque(true);
+//
+//        jLabel4.setBackground(new java.awt.Color(51, 102, 255));
+//        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+//        jLabel4.setText("TRANSACTION ENTRY FORM");
+//        jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+//        jLabel4.setOpaque(true);
+
+        printBtn.setText("PRINT");
+        printBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                printBtnActionPerformed(evt);
+            }
+        });
+
+        backBtn.setText("BACK");
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBtnActionPerformed(evt);
+            }
+        });
+        
+        //The code for table starts from here
+        String [] colNames  = {"SrNo","Particulars","Quantity","Amount"};
+        String [][] rowData = new String[2][colNames.length];
+		jtable = new JTable(rowData, colNames);
+		
+//		layout.addLayoutComponent(component, constraints);
+//		layout.addLayoutComponent(jtable, layout);
+		
+		topPanel.setLayout(layout);
+		
+		FlowLayout flowLayout = new FlowLayout();
+		flowLayout.addLayoutComponent("table", jtable);
+		bottomPanel.setLayout(flowLayout);
+		bottomPanel.setVisible(true);
+        pack();
+
+	}
+	
+	public void setAllDataDields(ReceiptWindow receiptWindow){
+		if(receiptWindow==null){
+		return;
+		}
+	}
+	
+	private void resetBtnActionPerformed(ActionEvent evt) {
+		System.out.println(" evt.getActionCommand() : "+evt.getActionCommand());
+		companyNameValue.setText("");
+		dateValue.setText("");
+		
+	}
+	
+	private void printBtnActionPerformed(ActionEvent evt) {
+		System.out.println(" evt.getActionCommand() : "+evt.getActionCommand());
+		
+	}
+	
+	private void backBtnActionPerformed(ActionEvent evt) {
+		HelloWorld a=new HelloWorld();
+		a.frame.setVisible(true);
+		this.setVisible(false);
+		//here we need to set current frames visibility to false 
+		//frame.setVisible(false);
+	}
+}
+
